@@ -1,0 +1,17 @@
+
+- name: update APT pakage manager repositories cache
+  become: true
+  apt: 
+    update_cache: yes
+   
+- name: installing the items
+  become: true
+  apt:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - openjdk-8-jdk
+    - maven
+    - apache2
+    - tomcat7 
+ 

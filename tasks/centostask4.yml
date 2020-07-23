@@ -1,0 +1,9 @@
+- name: installing the beow tasks
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - java
+    - maven
+    - tomcat
+    - webserver
